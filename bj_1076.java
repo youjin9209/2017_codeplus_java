@@ -21,8 +21,9 @@ public class bj_1076 {
 		String a = sc.nextLine();
 		String b = sc.nextLine();
 		String c = sc.nextLine();
+		
 		long ans = d.get(a)*10 + d.get(b);
-		for(int i = 0; i < d.get(c); i++) {
+		for (int i = 0; i < d.get(c); i++) {
 			ans *= 10;
 		}
 		System.out.println(ans);

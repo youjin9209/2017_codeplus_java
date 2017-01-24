@@ -6,11 +6,11 @@ public class bj_7785 {
 
 	public static void main(String[] args) throws IOException{
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-		int n = Integer.parseInt(bf.readLine());
+		int n = Integer.valueOf(bf.readLine());
 		HashSet<String> d = new HashSet<String>();
-		while (n-- > 0) {
-			String[] line = bf.readLine().split(" ");
-			if (line[1].equals("enter")) 
+		while(n-- > 0) {
+			String line[] = bf.readLine().split(" ");
+			if (line[1].equals("enter"))
 				d.add(line[0]);
 			else
 				d.remove(line[0]);
