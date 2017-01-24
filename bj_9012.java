@@ -20,7 +20,7 @@ public class bj_9012 {
 				}
 				else {
 					if (stack.empty() == true) {
-						stack.push(line[i]);
+						stack.push(line[i]); // 마지막 문자가 ")" 일때 - 넣어주고 나와 
 						break;
 					}
 					else
@@ -30,9 +30,9 @@ public class bj_9012 {
 				}	
 			}
 			
-			if (stack.empty() == true)
+			if (stack.empty() == true) // when zerosum
 				System.out.println("YES");
-			else if (stack.peek().equals(")"))
+			else if (stack.peek().equals(")")) // 마지막 문자가 ")" 일때 
 				System.out.println("NO");
 			else
 				System.out.println("NO");
