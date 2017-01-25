@@ -32,6 +32,7 @@ public class bj_1918 {
 			Operand.add(a);
 		}
 		
+		
 		for (int i = 0; i < T.length; i++) {
 			if (Operand.contains(T[i]) == true) {
 				sb.append(T[i]);
@@ -39,14 +40,19 @@ public class bj_1918 {
 				while(!stack.peek().equals("(")) {
 					sb.append(stack.pop());
 				}
-				stack.pop();
+				if (stack.peek().equals("("))
+					stack.pop();
 			} else if (T[i].equals("(")) {
 				stack.push(T[i]);
 			} else {
 				if ((stack.empty() == true) || (isp.get(stack.peek()) < icp.get(T[i])))
 					stack.push(T[i]);
 				else if ((isp.get(stack.peek()) >= icp.get(T[i]))) {
-					sb.append(stack.pop());
+					while((isp.get(stack.peek()) >= icp.get(T[i]))) {
+						sb.append(stack.pop());
+						if (stack.empty())
+							break;
+					}
 					stack.push(T[i]);
 				}
 			}
